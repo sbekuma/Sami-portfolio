@@ -957,7 +957,7 @@ const Portfolio = () => {
           
           <div className="flex items-center gap-8">
             <a href="https://linkedin.com/in/samibekuma" className={`${t.textSub} hover:${t.textHead} transition-colors`}><Linkedin className="w-5 h-5" /></a>
-            <a href="https://github.com" className={`${t.textSub} hover:${t.textHead} transition-colors`}><Github className="w-5 h-5" /></a>
+            <a href="https://github.com/sbekuma?tab=repositories" className={`${t.textSub} hover:${t.textHead} transition-colors`}><Github className="w-5 h-5" /></a>
             <a href="mailto:samibekuma.tmc@gmail.com" className={`${t.textSub} hover:${t.textHead} transition-colors text-sm font-mono`}>samibekuma.tmc@gmail.com</a>
           </div>
         </div>
