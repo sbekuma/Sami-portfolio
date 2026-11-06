@@ -155,8 +155,13 @@ const Portfolio = () => {
       company: "Comcast / Xfinity Voice AI",
       period: "2024 — Present",
       type: "complex",
-      tech: ['Azure OpenAI', 'Grafana', 'Kubernetes', 'Python', 'RAG', 'NLP', 'CI/CD', 'Qwen (Fine-tuning)', 'MLOps', 'Java', 'AWS','Springboot','FastAPI',],
+      tech: ['Python', 'LangGraph', 'LangChain', 'FastAPI', 'Agent-to-Agent (A2A)', 'Azure OpenAI', 'Gemma', 'DeepEval', 'Langfuse', 'OpenTelemetry', 'AWS S3', 'PostgreSQL', 'Grafana', 'Kubernetes'],
       highlights: [
+        { 
+          icon: <ShieldCheck className={`w-6 h-6 ${t.accent}`} />,
+          title: "Agentic AI Failure-Investigation Platform",
+          desc: "Architected and built from scratch an agentic AI failure-investigation platform for Comcast’s US/UK production Voice RAG system, combining deterministic triage with LLM reasoning and diagnostic tool selection across policy screening, entity/facet extraction, retrieval, and response generation; reduced root-cause investigation time from 30+ minutes to under 30 seconds across 10K+ triaged queries daily."
+        },
         { 
           icon: <Globe className={`w-6 h-6 ${t.accent}`} />,
           title: "End-to-End Validation Ecosystem",
@@ -284,7 +289,7 @@ const Portfolio = () => {
             </button>
 
             <a 
-              href="/Sami Bekuma ML Engineer.pdf" 
+              href="/Sami_Bekuma_Resume_ML_AI_2026-11.pdf" 
               target="_blank"
               rel="noopener noreferrer"
               className={`hidden sm:flex group items-center gap-3 text-xs font-mono uppercase tracking-widest ${t.accentHover} transition-colors`}
@@ -316,7 +321,7 @@ const Portfolio = () => {
               </button>
             ))}
             <a 
-              href="/Sami Bekuma ML Engineer.pdf" 
+              href="/Sami_Bekuma_Resume_ML_AI_2026-11.pdf" 
               target="_blank"
               rel="noopener noreferrer"
               className={`flex items-center gap-3 text-sm font-mono uppercase tracking-widest ${t.textHead}`}
@@ -479,6 +484,126 @@ const Portfolio = () => {
 
           <div className="grid grid-cols-1 gap-12">
             
+            {/* Project 0: Agentic AI Failure Investigation Platform */}
+            <div className={`group grid md:grid-cols-2 border ${t.border} ${t.bg} ${t.accentBorderHover} transition-all duration-500`}>
+              <div className={`p-8 md:p-12 ${t.bgSecondary} flex flex-col justify-center relative overflow-hidden order-last md:order-first border-t md:border-t-0 md:border-r ${t.border}`}>
+                <div className="absolute inset-0 flex items-center justify-center opacity-15">
+                   <div className={`w-full h-full border-2 border-dashed ${isDark ? 'border-cyan-500/30' : 'border-indigo-600/30'} rounded-lg`}></div>
+                </div>
+
+                {/* Animated Agentic Architecture Diagram */}
+                <div className={`relative z-10 w-full max-w-sm border ${t.border} ${t.bg} p-5 font-mono text-xs ${t.textSub} ${t.shadow} space-y-4 mx-auto`}>
+                  <div className={`flex justify-between items-center border-b ${t.border} pb-3`}>
+                     <span className={`${t.textHead} font-medium flex items-center gap-2`}><Activity className={`w-4 h-4 ${t.accent} animate-pulse`}/> LangGraph Live Agent</span>
+                     <span className={`${isDark ? 'text-cyan-400 bg-cyan-950/80 border border-cyan-800/50' : 'text-indigo-700 bg-indigo-50 border border-indigo-200'} px-2 py-0.5 rounded text-[10px] animate-pulse`}>Active Node</span>
+                  </div>
+
+                  {/* Flow Steps Animation */}
+                  <div className="space-y-2">
+                    <div className={`p-2.5 rounded border ${isDark ? 'bg-cyan-950/20 border-cyan-500/30 text-cyan-300' : 'bg-indigo-50 border-indigo-200 text-indigo-900'} flex items-center justify-between text-[11px]`}>
+                      <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span> 1. S3 Trace & Triage</span>
+                      <span className="text-[10px] opacity-70">Deterministic</span>
+                    </div>
+                    
+                    <div className="flex justify-center my-0.5">
+                      <div className={`w-0.5 h-3 ${isDark ? 'bg-cyan-500/40' : 'bg-indigo-400/40'} animate-pulse`}></div>
+                    </div>
+
+                    <div className={`p-2.5 rounded border ${isDark ? 'bg-cyan-950/40 border-cyan-500/50 text-cyan-200' : 'bg-indigo-100 border-indigo-300 text-indigo-950'} flex items-center justify-between text-[11px] shadow-sm`}>
+                      <span className="flex items-center gap-2"><Cpu className="w-3.5 h-3.5 animate-spin text-cyan-400" /> 2. A2A Tool Selection</span>
+                      <span className="text-[10px] font-bold">Gemma/OpenAI</span>
+                    </div>
+
+                    <div className="flex justify-center my-0.5">
+                      <div className={`w-0.5 h-3 ${isDark ? 'bg-cyan-500/40' : 'bg-indigo-400/40'} animate-pulse`}></div>
+                    </div>
+
+                    <div className={`p-2.5 rounded border ${isDark ? 'bg-green-950/30 border-green-500/30 text-green-300' : 'bg-emerald-50 border-emerald-200 text-emerald-800'} flex items-center justify-between text-[11px]`}>
+                      <span className="flex items-center gap-2"><CheckCircle className="w-3.5 h-3.5 text-green-400" /> 3. Pydantic Diagnostic Report</span>
+                      <span className="text-[10px] opacity-70">&lt;30s</span>
+                    </div>
+                  </div>
+
+                  <div className={`pt-2 border-t ${t.border} flex justify-between text-[10px]`}>
+                     <span>Cost Routing: <strong className={t.accent}>-45% Tokens</strong></span>
+                     <span className={isDark ? "text-green-400" : "text-emerald-600"}>Langfuse Traced</span>
+                  </div>
+                </div>
+
+                {/* Diagnostic Engine Summary Card placed directly underneath the animation to fill space */}
+                <div className={`relative z-10 w-full max-w-sm border ${t.border} ${t.bg} p-5 font-mono text-xs ${t.textSub} ${t.shadow} mt-6 mx-auto`}>
+                  <div className={`flex justify-between items-center mb-4 border-b ${t.border} pb-3`}>
+                     <span className={`${t.textHead} font-medium flex items-center gap-2`}><Activity className={`w-4 h-4 ${t.accent}`}/> Diagnostic Engine</span>
+                     <span className={`${isDark ? 'text-cyan-400 bg-cyan-950' : 'text-indigo-700 bg-indigo-50'} px-2 py-0.5 rounded text-[10px]`}>Active Trace</span>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                       <span>Investigation Time</span>
+                       <span className={t.accent}>&lt; 30 sec</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                       <span>Daily Triage Volume</span>
+                       <span className={t.accent}>10K+ queries</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                       <span>Evaluation Cost Savings</span>
+                       <span className={isDark ? "text-green-400" : "text-emerald-600"}>~45% reduction</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                       <span>Tracing & Observability</span>
+                       <span className={t.accent}>Langfuse + Otel</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className={`p-8 md:p-12 flex flex-col justify-between border-b md:border-b-0 md:border-r ${t.border} relative overflow-hidden`}>
+                <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${isDark ? 'from-cyan-500' : 'from-indigo-600'} to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700`}></div>
+                
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <Cpu className={`w-5 h-5 ${t.accent}`} />
+                    <span className={`font-mono text-xs ${t.accent} uppercase tracking-widest`}>Agentic AI & Diagnostics</span>
+                  </div>
+                  <h4 className={`text-2xl md:text-3xl ${t.textHead} font-medium mb-4`}>Agentic AI Failure Investigation Platform for Voice RAG</h4>
+                  <p className={`${t.textSub} leading-relaxed mb-6 text-xs md:text-sm font-mono`}>
+                    Python | LangGraph | LangChain | FastAPI | Agent-to-Agent (A2A) | Pydantic | Azure OpenAI | Gemma | DeepEval | Langfuse | OpenTelemetry | AWS S3 | PostgreSQL
+                  </p>
+                  <ul className={`space-y-3 text-sm ${t.textSub} mb-8`}>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className={`w-4 h-4 ${t.accent} mt-1 shrink-0`} />
+                      <span>Designed a dual-mode diagnostic engine supporting both live requests and historical S3 production traces, reconstructing and normalizing pipeline evidence for automated root-cause analysis.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className={`w-4 h-4 ${t.accent} mt-1 shrink-0`} />
+                      <span>Built hybrid deterministic triage and LLM-driven workflows with LangGraph and LangChain, enabling agents to dynamically select diagnostic tools and isolate failures across policy screening, entity/facet extraction, retrieval, and response generation.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className={`w-4 h-4 ${t.accent} mt-1 shrink-0`} />
+                      <span>Implemented cost-aware model routing across Azure OpenAI and open-source Gemma models, directing targeted DeepEval workloads to lower-cost models and reducing evaluation token costs by ~45% while preserving frontier models.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className={`w-4 h-4 ${t.accent} mt-1 shrink-0`} />
+                      <span>Developed a fault-tolerant FastAPI service using Agent-to-Agent (A2A) and Pydantic, generating schema-validated diagnostic reports backed by AWS S3 trace reconstruction and PostgreSQL checkpointing.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ArrowRight className={`w-4 h-4 ${t.accent} mt-1 shrink-0`} />
+                      <span>Integrated Langfuse and OpenTelemetry for end-to-end observability, tracing multi-step agent trajectories and individual tool calls to monitor latency, token usage, cost, and performance bottlenecks.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4">
+                  {['LangGraph & LangChain Agents', 'FastAPI & Pydantic A2A', 'DeepEval & Langfuse Observability'].map((stack, i) => (
+                    <div key={i} className={`flex items-center gap-4 text-sm ${t.textSub} font-mono`}>
+                      <div className={`w-2 h-2 ${isDark ? 'bg-green-500' : 'bg-emerald-500'} rounded-full`}></div>
+                      {stack}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {/* Project 1: Comcast RAG Evaluation Platform */}
             <div className={`group grid md:grid-cols-2 border ${t.border} ${t.bg} ${t.accentBorderHover} transition-all duration-500`}>
               <div className={`p-8 md:p-12 flex flex-col justify-between border-b md:border-b-0 md:border-r ${t.border} relative overflow-hidden`}>
